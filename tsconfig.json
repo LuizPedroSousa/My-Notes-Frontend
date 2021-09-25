@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Buttons/AddListButton/stories.tsx"  ],
+, "src/components/Buttons/AddListButton/stories.tsx", "jest.config.js", "jest.setup.js", "src/components/Buttons/AddTodoButton/test.tsx", "__mocks__/styleMock.js"  ],
   "exclude": [
     "node_modules"
   ]

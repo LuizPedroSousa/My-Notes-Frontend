@@ -23,7 +23,12 @@ class TodoItem extends Component<TodoItemProps> {
         <div className="absolute right-2 top-2 flex items-center justify-center">
           <button
             type="button"
-            name={this.props.todo.hasChecked ? 'Marcar todo' : 'Desmarcar todo'}
+            name={
+              !this.props.todo.hasChecked ? 'Marcar todo' : 'Desmarcar todo'
+            }
+            aria-label={
+              !this.props.todo.hasChecked ? 'Marcar todo' : 'Desmarcar todo'
+            }
             className={`w-5 h-5 rounded-md transition-colors duration-200 ${
               this.props.todo.hasChecked
                 ? `bg-green-400 flex items-center justify-center 
@@ -31,11 +36,14 @@ class TodoItem extends Component<TodoItemProps> {
                 : 'bg-gray-400 hover:border-2 hover:border-gray-400 hover:bg-gray-300'
             }`}
           >
-            {this.props.todo.hasChecked && <BsCheckAll />}
+            {this.props.todo.hasChecked && (
+              <BsCheckAll aria-label="Icone marcado" />
+            )}
           </button>
           <button
             type="button"
             name={`Editar todo ${this.props.todo.title}`}
+            aria-label={`Editar todo ${this.props.todo.title}`}
             className={
               'w-5 h-5 rounded-md ml-1 transition-colors duration-200 bg-gray-400 hover:border-2 hover:border-gray-400 hover:bg-gray-300'
             }
