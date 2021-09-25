@@ -45,7 +45,6 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.0",
     "postcss": "^7.0.38",
-    "postcss-loader": "^6.1.1",
     "prettier": "^2.4.1",
     "storybook-addon-next-router": "^3.0.8",
     "tailwind.macro": "^0.5.10",

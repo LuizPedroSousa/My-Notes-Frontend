@@ -18,7 +18,6 @@ module.exports = {
 
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
@@ -27,7 +26,18 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
       bg: "#121214",
-      'card-normal': "#202024"
+      'card-normal': "#202024",
+      gray: {
+        100: "#d2d2d3",
+        200: "#a6a6a7",
+        300: "#79797c",
+        400: "#4d4d50",
+        500: "#202024",
+        600: "#1a1a1d",
+        700: "#131316",
+        800: "#0d0d0e",
+        900: "#060607"
+      },
     },
     spacing: {
       px: '1px',

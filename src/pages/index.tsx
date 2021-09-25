@@ -1,6 +1,6 @@
 import { DefaultLayout } from 'components/layouts/DefaultLayout'
 import Seo from 'components/Seo'
-import { TodoCard } from 'components/TodoCard'
+import { TodoListCard } from 'components/TodoListCard'
 import React, { Component } from 'react'
 
 export default class Home extends Component {
@@ -11,12 +11,42 @@ export default class Home extends Component {
         <main>
           <div className="w-full flex flex-col items-center justify-center">
             <section className="flex flex-col">
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
-              <TodoCard title="A fazer" todos={[{ title: 'a' }]} />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
+              <TodoListCard
+                title="A fazer"
+                todos={[
+                  { title: 'a', hasChecked: false, id: '', description: '' }
+                ]}
+              />
             </section>
           </div>
         </main>

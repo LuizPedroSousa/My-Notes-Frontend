@@ -31,7 +31,7 @@ class MyDocument extends Document<DocumentProps> {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-bg text-base font-normal text-white">
+        <body>
           <Main />
           <NextScript />
         </body>
