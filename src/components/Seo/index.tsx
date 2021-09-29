@@ -13,21 +13,18 @@ class Seo extends Component<SeoProps> {
   render(): JSX.Element {
     return (
       <Head>
-        <title>{this.props.title} | Next Auth</title>
+        <title>{this.props.title} | My Notes</title>
         <meta name="title" content={`${this.props.title} | My Notes`} />
         <meta name="description" content={this.props.description} />
         <meta
           name="image"
           content={`https://${process.env.VERCEL_URL}/images/thumbs${this.props.thumb}`}
         />
-        <meta
-          property="image:alt"
-          content={`${this.props.title} | Next Auth`}
-        />
+        <meta property="image:alt" content={`${this.props.title} | My Notes`} />
 
         <meta property="og:title" content={`${this.props.title} | My Notes`} />
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:site_name" content="Next Auth" />
+        <meta property="og:site_name" content="My Notes" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:width" content="627" />
         <meta property="og:type" content="website" />
@@ -43,13 +40,10 @@ class Seo extends Component<SeoProps> {
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:image:alt"
-          content={`${this.props.title} | Next Auth`}
+          content={`${this.props.title} | My Notes`}
         />
 
-        <meta
-          name="twitter:title"
-          content={`${this.props.title} | Next Auth`}
-        />
+        <meta name="twitter:title" content={`${this.props.title} | My Notes`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:url"

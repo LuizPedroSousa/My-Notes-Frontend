@@ -13,6 +13,12 @@ type TodoList = {
   todos: Todo[]
 }
 
+type Seo = {
+  title: string
+  description: string
+  thumb: string
+}
+
 const generateTodo = (): Todo => {
   return {
     id: uuid(),
@@ -36,4 +42,10 @@ export const defaultTodoTest: Todo = generateTodo()
 export const defaultTodoListTest: TodoList = {
   title: faker.random.words(2),
   todos: generateTodos()
+}
+
+export const defaultSeoTest: Seo = {
+  title: faker.random.words(2),
+  description: faker.random.words(20),
+  thumb: faker.random.word()
 }
