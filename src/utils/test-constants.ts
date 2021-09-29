@@ -8,9 +8,32 @@ type Todo = {
   description?: string
 }
 
-export const defaultTodoTest: Todo = {
-  id: uuid(),
+type TodoList = {
+  title: string
+  todos: Todo[]
+}
+
+const generateTodo = (): Todo => {
+  return {
+    id: uuid(),
+    title: faker.random.words(2),
+    description: faker.random.words(10),
+    hasChecked: faker.datatype.boolean()
+  }
+}
+
+const generateTodos = (): Todo[] => {
+  const todos: Todo[] = []
+  for (let i = 0; i < faker.datatype.number(10); i++) {
+    todos.push(generateTodo())
+  }
+
+  return todos
+}
+
+export const defaultTodoTest: Todo = generateTodo()
+
+export const defaultTodoListTest: TodoList = {
   title: faker.random.words(2),
-  description: faker.random.words(10),
-  hasChecked: faker.datatype.boolean()
+  todos: generateTodos()
 }
