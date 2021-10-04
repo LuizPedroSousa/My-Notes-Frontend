@@ -3,6 +3,8 @@ import { AiFillEdit } from 'react-icons/ai'
 
 import { BsCheckAll } from 'react-icons/bs'
 
+import styles from './styles.module.css'
+
 type Todo = {
   id: string
   title: string
@@ -17,10 +19,10 @@ interface TodoItemProps {
 class TodoItem extends Component<TodoItemProps> {
   render(): JSX.Element {
     return (
-      <li className="w-full pt-4 pb-5 px-3 border-2 relative border-gray-400 rounded-md mb-4 bg-gray-600">
+      <li className={styles.todoItemContainer}>
         <strong>{this.props.todo.title}</strong>
         <p>{this.props.todo.description}</p>
-        <div className="absolute right-2 top-2 flex items-center justify-center">
+        <div className={styles.optionsContainer}>
           <button
             type="button"
             name={
@@ -29,12 +31,14 @@ class TodoItem extends Component<TodoItemProps> {
             aria-label={
               !this.props.todo.hasChecked ? 'Marcar todo' : 'Desmarcar todo'
             }
-            className={`w-5 h-5 rounded-md transition-colors duration-200 ${
-              this.props.todo.hasChecked
-                ? `bg-green-400 flex items-center justify-center 
-              hover:bg-green-600 hover:border-2 hover:border-green-400 focus:border-0 focus:ring-2 focus:ring-green-300`
-                : 'bg-gray-400 hover:border-2 hover:border-gray-400 hover:bg-gray-300'
-            }`}
+            className={`
+              ${styles.buttonOption}
+
+              ${
+                this.props.todo.hasChecked
+                  ? styles.checkedButton
+                  : styles.uncheckedButton
+              }`}
           >
             {this.props.todo.hasChecked && (
               <BsCheckAll aria-label="Icone marcado" />
@@ -44,9 +48,7 @@ class TodoItem extends Component<TodoItemProps> {
             type="button"
             name={`Editar todo ${this.props.todo.title}`}
             aria-label={`Editar todo ${this.props.todo.title}`}
-            className={
-              'w-5 h-5 rounded-md ml-1 transition-colors duration-200 bg-gray-400 hover:border-2 hover:border-gray-400 hover:bg-gray-300'
-            }
+            className={`${styles.buttonOption} ${styles.editTodoButton}`}
           >
             <AiFillEdit className="m-auto" />
           </button>

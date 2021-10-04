@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen, within, waitFor } from '@testing-library/react'
+import { render, screen, within, waitFor } from 'utils/test-utils'
 import { TodoListCard } from '.'
 import { defaultTodoListTest } from 'utils/test-constants'
 

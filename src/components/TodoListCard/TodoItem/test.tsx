@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from 'utils/test-utils'
 import { TodoItem } from '.'
 import { defaultTodoTest } from 'utils/test-constants'
 
@@ -26,9 +26,6 @@ describe('<TodoItem />', () => {
     expect(button).toBeInTheDocument()
     expect(button).toHaveProperty('name', 'Marcar todo')
     expect(button).toHaveProperty('type', 'button')
-    expect(button).toHaveClass(
-      'bg-gray-400 hover:border-2 hover:border-gray-400 hover:bg-gray-300'
-    )
   })
 
   it('should render a button with checked icon when hasChecked is true', () => {
@@ -42,9 +39,6 @@ describe('<TodoItem />', () => {
     expect(icon).toBeInTheDocument()
     expect(button).toHaveProperty('name', 'Desmarcar todo')
     expect(button).toHaveProperty('type', 'button')
-    expect(button).toHaveClass(
-      'bg-green-400 flex items-center justify-center hover:bg-green-600 hover:border-2 hover:border-green-400 focus:border-0 focus:ring-2 focus:ring-green-300'
-    )
     expect(button).toContainElement(icon)
   })
 })

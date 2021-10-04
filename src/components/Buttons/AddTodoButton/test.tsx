@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
-import { AddTodoButton } from '.'
+import { render, screen } from 'utils/test-utils'
+import AddTodoButton from '.'
 
 describe('<AddTodoButton />', () => {
   it('should render a button with correct text', () => {

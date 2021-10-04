@@ -1,0 +1,14 @@
+.todosSection {
+  height: 98vh;
+  @apply py-10 w-full mx-auto grid
+          gap-4 sm:gap-x-5
+          overflow-x-scroll;
+}
+
+.todosSection::-webkit-scrollbar {
+  @apply h-3 rounded-md bg-white overflow-hidden;
+}
+
+.todosSection::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-gray-400;
+}

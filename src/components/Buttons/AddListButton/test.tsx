@@ -1,6 +1,6 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
-import { AddListButton } from '.'
+import { render, screen } from 'utils/test-utils'
+import AddListButton from '.'
 
 describe('<AddListButton />', () => {
   it('should render a button with correct text', () => {

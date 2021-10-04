@@ -37,6 +37,24 @@ Normal.args = {
       hasChecked: false,
       id: '602b6a72-c3fa-491b-9165-18d0d615a626',
       description: 'Doces, frutas etc 🛒'
+    },
+    {
+      title: 'Lista de compras',
+      hasChecked: false,
+      id: '602b6a72-c3fa-491b-9165-18d0d615a626',
+      description: 'Doces, frutas etc 🛒'
+    },
+    {
+      title: 'Lista de compras',
+      hasChecked: false,
+      id: '602b6a72-c3fa-491b-9165-18d0d615a626',
+      description: 'Doces, frutas etc 🛒'
+    },
+    {
+      title: 'Lista de compras',
+      hasChecked: false,
+      id: '602b6a72-c3fa-491b-9165-18d0d615a626',
+      description: 'Doces, frutas etc 🛒'
     }
   ]
 }

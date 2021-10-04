@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Meta, Story } from '@storybook/react'
-import { AddTodoButton } from '.'
+import AddTodoButton from '.'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AddTodoButtonProps {}

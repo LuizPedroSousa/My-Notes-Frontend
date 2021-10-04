@@ -1,0 +1,43 @@
+.container {
+  height: max-content;
+}
+
+.addTodoButton {
+  @apply w-72 h-12 flex items-center bg-opacity-25 font-medium 
+  justify-start rounded-md py-4 px-3 border-transparent border-2
+  overflow-hidden relative z-20
+  bg-gray-400 hover:bg-gray-600
+  hover:border-gray-400 focus:border-transparent focus:bg-gray-700 focus:ring-2 focus:ring-gray-200
+  lg:rounded-lg;
+}
+
+.addListForm {
+  @apply bg-card-normal px-3 py-4 rounded-md w-72;
+}
+
+.addListForm input {
+  @apply h-11 w-full rounded-md outline-none bg-gray-700 px-4;
+}
+
+.addListForm > div {
+  @apply grid w-full mt-4 gap-x-3;
+  grid-template-columns: 10rem 2.25rem 1fr;
+}
+
+.addListForm > div > button {
+  @apply flex items-center justify-center w-full
+  rounded-md h-9 font-medium;
+}
+
+.addListForm > div > button:first-of-type {
+  @apply bg-purple-500 border-2 border-opacity-0 pt-1
+  hover:bg-purple-700 hover:border-purple-500 focus:bg-purple-800
+  focus:border-opacity-0 focus:ring-2 focus:ring-purple-400;
+  font-size: 0.9rem;
+}
+
+.addListForm > div > button:last-of-type {
+  @apply bg-red-500 border-2 border-opacity-0 text-lg
+hover:bg-red-700 hover:border-red-500 focus:bg-red-800
+  focus:border-opacity-0 focus:ring-2 focus:ring-red-400;
+}

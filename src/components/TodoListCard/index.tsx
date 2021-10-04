@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { TodoItem } from 'components/TodoListCard/TodoItem'
-
-import { AddTodoButton } from 'components/Buttons/AddTodoButton'
+import AddTodoButton from 'components/Buttons/AddTodoButton'
+import styles from './styles.module.css'
 
 type Todo = {
   id: string
@@ -13,12 +13,13 @@ type Todo = {
 interface TodoListCardProps {
   title: string
   todos: Todo[]
+  todoIndex?: number
 }
 
 class TodoListCard extends Component<TodoListCardProps> {
   render(): JSX.Element {
     return (
-      <div className="bg-card-normal break-words flex flex-col justify-between rounded-lg p-3">
+      <div className={styles.cardContainer}>
         <strong className="text-xl capitalize mb-2">{this.props.title}</strong>
 
         <ul>
@@ -26,7 +27,7 @@ class TodoListCard extends Component<TodoListCardProps> {
             <TodoItem key={todo.id} todo={todo} />
           ))}
         </ul>
-        <AddTodoButton />
+        <AddTodoButton todoIndex={this.props.todoIndex} />
       </div>
     )
   }
