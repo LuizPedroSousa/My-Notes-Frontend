@@ -1,0 +1,4 @@
+.container {
+  height: 100vh;
+  @apply w-full flex items-center justify-center;
+}

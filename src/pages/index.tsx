@@ -4,6 +4,9 @@ import Seo from 'components/Seo'
 import Todos from 'components/Todos'
 
 import styles from 'styles/pages/home.module.css'
+import { GetServerSideProps } from 'next'
+import { withAuthSSR } from 'lib/middlewares/withAuthSSR'
+import api from 'services/api'
 
 type Todo = {
   id: string
@@ -36,3 +39,17 @@ export default class Home extends Component<any, State> {
     )
   }
 }
+
+export const getServerSideProps: GetServerSideProps = withAuthSSR(
+  async ({ req, res }) => {
+    try {
+    } catch (err) {
+      return {
+        redirect: {
+          destination: '/login',
+          permanent: false
+        }
+      }
+    }
+  }
+)
