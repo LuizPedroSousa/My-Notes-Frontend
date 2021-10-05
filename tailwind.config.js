@@ -15,7 +15,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
+      primary: "#6C63FF",
       black: colors.black,
       white: colors.white,
       red: colors.red,
@@ -27,6 +27,7 @@ module.exports = {
       pink: colors.pink,
       bg: "#121214",
       'card-normal': "#202024",
+      "card-light": "#29292E",
       gray: {
         100: "#d2d2d3",
         200: "#a6a6a7",
@@ -37,6 +38,17 @@ module.exports = {
         700: "#131316",
         800: "#0d0d0e",
         900: "#060607"
+      },
+      indigo: {
+        100: "#e2e0ff",
+        200: "#c4c1ff",
+        300: "#a7a1ff",
+        400: "#8982ff",
+        500: "#6c63ff",
+        600: "#564fcc",
+        700: "#413b99",
+        800: "#2b2866",
+        900: "#161433"
       },
     },
     spacing: {

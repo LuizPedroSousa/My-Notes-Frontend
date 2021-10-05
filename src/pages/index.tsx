@@ -21,6 +21,7 @@ type TodoList = {
 interface State {
   todoList: TodoList[]
 }
+
 export default class Home extends Component<any, State> {
   render(): JSX.Element {
     return (

@@ -1,0 +1,21 @@
+.inputContainer {
+  @apply w-full bg-gray-800 grid rounded-md
+  transition-all duration-200 h-12
+  focus-within:ring-1 focus-within:ring-purple-700
+  overflow-hidden relative sm:h-14;
+  grid-template-columns: 2rem 1fr;
+}
+
+.inputContainer span {
+  @apply w-full h-full text-gray-100 flex items-center justify-end;
+}
+
+.inputContainer input {
+  @apply text-sm bg-gray-800 w-full h-full p-2 pl-3 outline-none;
+}
+
+.viewPasswordButton {
+  top: 50%;
+  transform: translateY(-50%);
+  @apply absolute right-4;
+}
