@@ -1,4 +1,5 @@
 import { Handler } from '@vercel/node'
+import { generateJWT } from 'lib/jwt'
 import { connectDb } from 'lib/middlewares/connectDb'
 import { withGithub, WithGithubRequest } from 'lib/middlewares/withGithub'
 import { Users } from 'models/UserSchema'
@@ -31,7 +32,8 @@ const handler: Handler<WithGithubRequest> = async (req, res) => {
     }
 
     return res.status(statusCode).json({
-      user
+      user,
+      token: generateJWT({ payload: { _id: user._id } })
     })
   } catch (err) {
     console.log(err)

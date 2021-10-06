@@ -1,9 +1,9 @@
-import Cookies from 'js-cookie'
 import {
   GetServerSideProps,
   GetServerSidePropsContext,
   GetServerSidePropsResult
 } from 'next'
+import { deleteCookieSSR } from 'utils/cookies'
 
 function withAuthSSR<P>(fn: GetServerSideProps<P>) {
   return async (
@@ -23,7 +23,7 @@ function withAuthSSR<P>(fn: GetServerSideProps<P>) {
       return await fn(ctx)
     } catch (err) {
       if (err) {
-        Cookies.remove('access_token')
+        deleteCookieSSR('access_token', ctx)
         return {
           redirect: {
             destination: '/login',

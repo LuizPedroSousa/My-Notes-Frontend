@@ -1,55 +1,58 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { DefaultLayout } from 'components/layouts/DefaultLayout'
 import Seo from 'components/Seo'
 import Todos from 'components/Todos'
 
-import styles from 'styles/pages/home.module.css'
 import { GetServerSideProps } from 'next'
 import { withAuthSSR } from 'lib/middlewares/withAuthSSR'
 import api from 'services/api'
+import { useDispatch } from 'react-redux'
+import { login } from 'store/ducks/users/actions'
+import styles from 'styles/pages/home.module.css'
+import { deleteCookieSSR } from 'utils/cookies'
 
-type Todo = {
-  id: string
-  title: string
-  hasChecked: boolean
-  description?: string
+type User = {
+  _id: string
+  idGithub?: string
+  name: string
+  email: string
+  avatar: string
 }
 
-type TodoList = {
-  id: string
-  title: string
-  todos: Todo[]
+interface HomeProps {
+  user?: User
+  token?: string
 }
 
-interface State {
-  todoList: TodoList[]
+export default function Home({ user, token }: HomeProps) {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(login(user, token))
+  }, [])
+
+  return (
+    <DefaultLayout>
+      <Seo title="Home" description="" thumb="" />
+      <main>
+        <div className={styles.container}>
+          <Todos />
+        </div>
+      </main>
+    </DefaultLayout>
+  )
 }
 
-export default class Home extends Component<any, State> {
-  render(): JSX.Element {
-    return (
-      <DefaultLayout>
-        <Seo title="Home" description="" thumb="" />
-        <main>
-          <div className={styles.container}>
-            <Todos />
-          </div>
-        </main>
-      </DefaultLayout>
-    )
+export const getServerSideProps: GetServerSideProps = withAuthSSR(async ctx => {
+  const token = ctx.req.cookies.access_token
+  if (ctx.req.cookies.isFirstLogin) {
+    deleteCookieSSR('isFirstLogin', ctx)
+    return { props: { token } }
   }
-}
 
-export const getServerSideProps: GetServerSideProps = withAuthSSR(
-  async ({ req, res }) => {
-    try {
-    } catch (err) {
-      return {
-        redirect: {
-          destination: '/login',
-          permanent: false
-        }
-      }
-    }
+  const { data } = await api.get<any>('/users/show', {
+    headers: { authorization: `Bearer ${token}` }
+  })
+  return {
+    props: { user: data.user, token }
   }
-)
+})

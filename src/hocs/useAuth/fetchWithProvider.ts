@@ -55,8 +55,9 @@ async function fetchWithProvider({
 
   const providerFetch = fetchers[provider]
 
-  Cookies.set('access_token', access_token)
   await providerFetch()
+  Cookies.set('access_token', access_token)
+  Cookies.set('isFirstLogin', 'true')
 
   return { user, access_token }
 }
